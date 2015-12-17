@@ -1,0 +1,45 @@
+body {
+	width: 1050px;
+	margin: 0 auto;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.numbers {
+	/*this is the place where the little buttons are*/
+ 	height: 25px;
+ 	margin: 10px 0 10px 0px;
+}
+
+button {
+	/*these are the number buttons*/
+	margin: 5px 15px 0 0;
+	padding: 5px;
+	background-color: #00acb0;
+	width: 55px;
+	font-size: 36px;
+}
+
+.randomizer {
+	/*this is the big button*/
+	margin: 35px 0 10px 0px;
+	background-color: #337277;
+	color: white;
+	width: 250px;
+}
+
+.container {
+	/*this is what holds the groups*/
+	margin: 0 auto;
+}
+
+.group {
+	/*this is each group of people*/
+	color: white;
+	vertical-align: top;
+	background-color: #00acb0;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 15px;
+	margin: 5px;
+	font-size: 36px;
+} 

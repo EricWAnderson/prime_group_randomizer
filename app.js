@@ -35,24 +35,36 @@ function genGroup () {
 
 	//create Groups
 	for (var i = 1; i <= num; i++) {
-		$(".container").append("<div class='group' id=" + i + ">Group " + i + "</div>");		
+		$(".container").append("<div class='group' id=" + i + "><span>Group " + i + "</span></div>");		
 	}
 	
 	//loop through array of students
 	//select random student, add to next group
 	var group = 1;
+
 	for (i = 0; i < cohortArray.length; i++) {
+
 		var person = randomNumber(0, selected.length - 1);
-		$("#" + group).append("<p>" + selected[person] + "</p>");
+		$("#" + group).append("<p data-id=" + i + ">" + selected[person] + "</p>");
+		$("#" + group).children().last().delay(50).slideDown();
 		selected.splice(person, 1);
 		console.log(selected);
 		console.log("group is ", group);
+
 		if (group == num) {
-			group = 1;
-		} else {
-			group++;
-		}
-	};	
+				group = 1;
+			} else {
+				group++;
+			}
+	}
+
+	// tried to delay display. didn't work
+
+	// setInterval(function() {
+	// 	for (i = 0; i < cohortArray.length; i++) {
+	// 		$(".container").find("data-id=" + i).show();
+	// 	}
+	// }, 1000);
 }
 
 function randomNumber(min, max) {

@@ -43,3 +43,11 @@ button {
 	margin: 5px;
 	font-size: 36px;
 } 
+
+span {
+	text-decoration: underline;
+}
+
+p {
+	display: none;
+}

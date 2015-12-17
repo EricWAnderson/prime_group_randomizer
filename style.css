@@ -19,6 +19,13 @@ button {
 	font-size: 36px;
 }
 
+button:active {
+	background-color: #337277;
+	color: white;
+	position: relative;
+	top: 10px;
+}
+
 .randomizer {
 	/*this is the big button*/
 	margin: 35px 0 10px 0px;

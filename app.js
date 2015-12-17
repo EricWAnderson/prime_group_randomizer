@@ -1,26 +1,20 @@
 var cohortArray = [ "Natalie", "Charlie", "Sam", "Zach", "Nathan", "Paul", "Anthony", "Liz", "Eric", "Jeremy", "Chris", "Brooks", "Altamir", "Amber", "Joe", "Kenzie", "Matthew", "Robby", "Mark", "Scott"];
 
-
 $(document).ready(function(){
 
 	for (var i = 2; i <= cohortArray.length/2; i++) {
-	
 		$(".numbers").append("<button>" + i + "</button>");
 	}
 
-$('.numbers').on('click', 'button',  numberClick)
-$('.buttonContainer').on('click', '.randomizer', genGroup)
-
+	$('.numbers').on('click', 'button',  numberClick)
+	$('.buttonContainer').on('click', '.randomizer', genGroup)
 });
 	
-
 var num = 0;
 
 function numberClick () {
 	num = $(this).text();
-	console.log("number of groups", num)
 }
-
 
 function genGroup () {
 
@@ -45,11 +39,12 @@ function genGroup () {
 	for (i = 0; i < cohortArray.length; i++) {
 
 		var person = randomNumber(0, selected.length - 1);
+
 		$("#" + group).append("<p data-id=" + i + ">" + selected[person] + "</p>");
-		$("#" + group).children().last().delay(50).slideDown();
+		var delay = i * 200;
+		$("#" + group).children().last().delay(delay).slideDown();
+
 		selected.splice(person, 1);
-		console.log(selected);
-		console.log("group is ", group);
 
 		if (group == num) {
 				group = 1;

@@ -13,16 +13,14 @@ $(document).ready(function(){
 var num = 0;
 
 function numberClick () {
+	$(this).addClass('active');
+	$(this).siblings().removeClass('active');
 	num = $(this).text();
 }
 
 function genGroup () {
-
 	//create temporary cohort array called selected
-	var selected = [];
-	for (var i = 0; i < cohortArray.length; i++) {
-		selected[i]=cohortArray[i];
-	}
+	var selected = cohortArray.slice(0);
 
 	//delete groups if they already exist
 	$(".container").children().remove();
@@ -41,7 +39,7 @@ function genGroup () {
 		var person = randomNumber(0, selected.length - 1);
 
 		$("#" + group).append("<p data-id=" + i + ">" + selected[person] + "</p>");
-		var delay = i * 200;
+		var delay = i * 100;
 		$("#" + group).children().last().delay(delay).slideDown();
 
 		selected.splice(person, 1);
@@ -52,14 +50,6 @@ function genGroup () {
 				group++;
 			}
 	}
-
-	// tried to delay display. didn't work
-
-	// setInterval(function() {
-	// 	for (i = 0; i < cohortArray.length; i++) {
-	// 		$(".container").find("data-id=" + i).show();
-	// 	}
-	// }, 1000);
 }
 
 function randomNumber(min, max) {

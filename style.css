@@ -26,6 +26,12 @@ button:active {
 	top: 10px;
 }
 
+.active {
+	background-color: #337277;
+	position: relative;
+	top: -10px;
+}
+
 .randomizer {
 	/*this is the big button*/
 	margin: 35px 0 10px 0px;
